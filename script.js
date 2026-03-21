@@ -49,6 +49,16 @@
     }, stepTime);
 })();
 
+// Enhanced Orbital Parallax Effect
+const orbitSystem = document.querySelector('.orbit-system');
+if (orbitSystem) {
+    window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX - window.innerWidth / 2) / 30;
+        const y = (e.clientY - window.innerHeight / 2) / 30;
+        orbitSystem.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+    });
+}
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
