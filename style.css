@@ -409,7 +409,7 @@ body::after {
 
 .hero-image-container {
     width: 380px;
-    height: 380px;
+    height: 460px;
     position: relative;
     display: flex;
     align-items: center;
@@ -458,83 +458,178 @@ body::after {
     gap: 4rem;
 }
 
+/* About Visual - Orbit System */
 .about-visual {
     flex: 1;
     display: flex;
     justify-content: center;
-    position: relative;
-}
-
-.animated-sphere {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    display: flex;
     align-items: center;
+    min-height: 550px;
+    perspective: 2000px;
+    position: relative;
+    background: radial-gradient(circle at center, rgba(235, 241, 255, 0.5) 0%, transparent 70%);
+}
+
+.orbit-system {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out; /* For parallax */
 }
 
-.ring {
+/* Background Glow */
+.orbit-system::before {
+    content: '';
     position: absolute;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    border-top-color: var(--primary);
-    border-bottom-color: var(--secondary);
-    animation: rotate 6s linear infinite;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, hsla(var(--h-primary), 90%, 65%, 0.12) 0%, transparent 75%);
+    filter: blur(50px);
+    z-index: -1;
 }
 
-.ring-1 {
+.orbit-center {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.8rem;
+    color: #242424;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1),
+                0 0 60px hsla(var(--h-primary), 90%, 65%, 0.25);
+    z-index: 10;
+    border: none;
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsla(var(--h-primary), 90%, 60%, 0.15) 0%, transparent 70%);
+    animation: centerPulse 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes centerPulse {
+    0% { transform: scale(0.85); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+.orbit-path {
+    position: absolute;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+.orbit-path::after {
+    content: '';
+    position: absolute;
+    top: -2.5px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--primary);
+    opacity: 0.6;
+}
+
+.path-1 { 
+    width: 240px; height: 240px; 
+    border: 1px dashed rgba(0, 102, 255, 0.15);
+    transform: rotateX(75deg) rotateY(15deg); 
+}
+.path-2 { 
+    width: 350px; height: 350px; 
+    border: 1px solid rgba(0, 102, 255, 0.08);
+    transform: rotateX(65deg) rotateY(-25deg); 
+}
+.path-3 { 
+    width: 460px; height: 460px; 
+    border: 1.5px solid rgba(0, 102, 255, 0.04);
+    transform: rotateX(80deg) rotateY(35deg); 
+}
+
+.orbit-item {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    z-index: 5;
+    transform-style: preserve-3d;
+}
+
+.item-inner {
     width: 100%;
     height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.ring-2 {
-    width: 80%;
-    height: 80%;
-    animation-direction: reverse;
-    animation-duration: 4s;
-    border-top-color: var(--secondary);
-    border-bottom-color: var(--primary);
+/* Brand Colors */
+.p1-1 i { color: #3776AB; } /* Python */
+.p1-2 i { color: #F7DF1E; text-shadow: 0 0 1px rgba(0,0,0,0.15); } /* JS */
+.p1-3 i { color: #61DAFB; } /* React */
+.p2-1 i { color: #E34F26; } /* HTML */
+.p2-2 i { color: #1572B6; } /* CSS */
+.p2-3 i { color: #339933; } /* Node */
+.p2-4 i { color: #4479A1; } /* MySQL */
+.p3-1 i { color: #00599C; } /* C++ */
+.p3-2 i { color: #007396; } /* Java */
+.p3-3 i { color: #F05032; } /* Git */
+.p3-4 i { color: #7952B3; } /* Bootstrap */
+
+.orbit-item:hover .item-inner {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.3) translateZ(20px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+    border-color: var(--primary);
 }
 
-.ring-3 {
-    width: 60%;
-    height: 60%;
-    animation-duration: 8s;
+/* Orbit Animations - Perfectly Balanced */
+.p1-1 { animation: orbit1 15s linear infinite; }
+.p1-2 { animation: orbit1 15s linear infinite -5s; }
+.p1-3 { animation: orbit1 15s linear infinite -10s; }
+
+.p2-1 { animation: orbit2 25s linear infinite; }
+.p2-2 { animation: orbit2 25s linear infinite -6.25s; }
+.p2-3 { animation: orbit2 25s linear infinite -12.5s; }
+.p2-4 { animation: orbit2 25s linear infinite -18.75s; }
+
+.p3-1 { animation: orbit3 40s linear infinite; }
+.p3-2 { animation: orbit3 40s linear infinite -10s; }
+.p3-3 { animation: orbit3 40s linear infinite -20s; }
+.p3-4 { animation: orbit3 40s linear infinite -30s; }
+
+@keyframes orbit1 {
+    from { transform: rotateX(75deg) rotateY(15deg) rotateZ(0deg) translateX(120px) rotateZ(0deg) rotateY(-15deg) rotateX(-75deg); }
+    to { transform: rotateX(75deg) rotateY(15deg) rotateZ(360deg) translateX(120px) rotateZ(-360deg) rotateY(-15deg) rotateX(-75deg); }
 }
 
-.core-icon {
-    font-size: 3rem;
-    color: var(--text-main);
-    z-index: 10;
-    animation: pulse 2s ease-in-out infinite alternate;
+@keyframes orbit2 {
+    from { transform: rotateX(65deg) rotateY(-25deg) rotateZ(0deg) translateX(175px) rotateZ(0deg) rotateY(25deg) rotateX(-65deg); }
+    to { transform: rotateX(65deg) rotateY(-25deg) rotateZ(360deg) translateX(175px) rotateZ(-360deg) rotateY(25deg) rotateX(-65deg); }
 }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg) scale(1);
-    }
-
-    50% {
-        transform: rotate(180deg) scale(1.05);
-    }
-
-    100% {
-        transform: rotate(360deg) scale(1);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: scale(1.1);
-        opacity: 1;
-        color: var(--primary);
-    }
+@keyframes orbit3 {
+    from { transform: rotateX(80deg) rotateY(35deg) rotateZ(0deg) translateX(230px) rotateZ(0deg) rotateY(-35deg) rotateX(-80deg); }
+    to { transform: rotateX(80deg) rotateY(35deg) rotateZ(360deg) translateX(230px) rotateZ(-360deg) rotateY(-35deg) rotateX(-80deg); }
 }
 
 .about-content-text {
@@ -623,6 +718,41 @@ body::after {
     color: var(--text-main);
     border: 1px solid var(--border);
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.tag i {
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+/* Skill Icon Brand Colors */
+.fa-html5 { color: #E34F26; }
+.fa-css3-alt { color: #1572B6; }
+.fa-js { color: #F7DF1E; }
+.fa-python { color: #3776AB; }
+.fa-java { color: #007396; }
+.fa-code { color: #A8B9CC; } /* C/Code */
+.fa-terminal { color: #00599C; } /* C++ */
+.fa-brain { color: #F79939; }
+.fa-table { color: #150458; }
+.fa-calculator { color: #013243; }
+.fa-fire { color: #FF6F00; }
+.fa-database { color: #4479A1; }
+.fa-github { color: #181717; }
+.fa-linux { color: #FCC624; }
+.fa-chart-simple { color: #F2C811; }
+.fa-git-alt { color: #F05032; }
+.fa-laptop-code { color: #007ACC; }
+.fa-lightbulb { color: #F7DF1E; }
+.fa-clock { color: #4A90E2; }
+.fa-arrows-spin { color: #50E3C2; }
+
+.tag:hover i {
+    color: white;
+    transform: scale(1.1);
 }
 
 .tag:hover {
@@ -1673,4 +1803,131 @@ body::after {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+/* Training Section Styles */
+.training-container {
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+.training-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.training-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.training-title-wrap h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.training-body ul {
+    list-style: none;
+}
+
+.training-body li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.training-body li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Achievements Section Styles */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 2.5rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    filter: drop-shadow(0 0 10px hsla(var(--h-accent), 92%, 50%, 0.3));
+    flex-shrink: 0;
+}
+
+.achievement-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.achievement-info p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.achievement-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .training-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .training-container {
+        padding: 1.5rem;
+    }
+    
+    .achievement-card {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
 }
