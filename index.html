@@ -19,9 +19,12 @@
     <!-- Preloader -->
     <div id="preloader" class="preloader">
         <div class="preloader-content">
-            <div class="preloader-logo">
-                <span class="logo-text">CHERUKU SAI KUMAR</span>
-                <span class="logo-subtitle">PORTFOLIO</span>
+            <div class="preloader-logo" id="preloaderLogoBlock">
+                <div class="logo-text-container" id="flyingLogo">
+                    <span class="logo-text telugu-text" id="loader-sa">SA</span><span class="logo-text telugu-text"
+                        id="loader-i">I</span>
+                </div>
+                <span class="logo-subtitle" id="loaderSubtitle">PORTFOLIO</span>
             </div>
 
             <div class="loading-system">
@@ -39,7 +42,7 @@
     </div>
 
     <nav class="navbar">
-        <a href="#" class="logo">Cheruku Sai Kumar</a>
+        <a href="#" class="logo" id="navbarLogo">Sai</a>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -49,6 +52,7 @@
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#achievements">Achievements</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a href="#resume">Resume</a></li>
             <li><a href="#contact" class="btn-contact">Contact</a></li>
         </ul>
         <div class="hamburger">
@@ -67,14 +71,15 @@
                 <p class="typed-intro stagger-item">And I'm a <span class="typing-text"></span><span
                         class="cursor"></span>
                 </p>
-                <p class="subtitle stagger-item">Aspiring Machine Learning Engineer focused on solving real-world problems using data-driven approaches.</p>
+                <p class="subtitle stagger-item">Aspiring Machine Learning Engineer focused on solving real-world
+                    problems using data-driven approaches.</p>
                 <div class="hero-socials stagger-item">
                     <a href="https://www.linkedin.com/in/cheruku-sai-kumar" target="_blank" class="social-circle"
                         aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://github.com/saikumarch1" target="_blank" class="social-circle"
                         aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="mailto:saisahas2005@gmail.com" class="social-circle"
-                        aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:saisahas2005@gmail.com" class="social-circle" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
                 </div>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary btn-magnetic stagger-item">View My Projects</a>
@@ -107,21 +112,43 @@
 
                         <!-- Orbiting Items -->
                         <!-- Path 1 (Small) -->
-                        <div class="orbit-item p1-1"><div class="item-inner"><i class="fa-brands fa-python"></i></div></div>
-                        <div class="orbit-item p1-2"><div class="item-inner"><i class="fa-brands fa-js"></i></div></div>
-                        <div class="orbit-item p1-3"><div class="item-inner"><i class="fa-brands fa-react"></i></div></div>
-                        
+                        <div class="orbit-item p1-1">
+                            <div class="item-inner"><i class="fa-brands fa-python"></i></div>
+                        </div>
+                        <div class="orbit-item p1-2">
+                            <div class="item-inner"><i class="fa-brands fa-js"></i></div>
+                        </div>
+                        <div class="orbit-item p1-3">
+                            <div class="item-inner"><i class="fa-brands fa-react"></i></div>
+                        </div>
+
                         <!-- Path 2 (Medium) -->
-                        <div class="orbit-item p2-1"><div class="item-inner"><i class="fa-brands fa-html5"></i></div></div>
-                        <div class="orbit-item p2-2"><div class="item-inner"><i class="fa-brands fa-css3-alt"></i></div></div>
-                        <div class="orbit-item p2-3"><div class="item-inner"><i class="fa-brands fa-node-js"></i></div></div>
-                        <div class="orbit-item p2-4"><div class="item-inner"><i class="fa-solid fa-database"></i></div></div>
+                        <div class="orbit-item p2-1">
+                            <div class="item-inner"><i class="fa-brands fa-html5"></i></div>
+                        </div>
+                        <div class="orbit-item p2-2">
+                            <div class="item-inner"><i class="fa-brands fa-css3-alt"></i></div>
+                        </div>
+                        <div class="orbit-item p2-3">
+                            <div class="item-inner"><i class="fa-brands fa-node-js"></i></div>
+                        </div>
+                        <div class="orbit-item p2-4">
+                            <div class="item-inner"><i class="fa-solid fa-database"></i></div>
+                        </div>
 
                         <!-- Path 3 (Large) -->
-                        <div class="orbit-item p3-1"><div class="item-inner"><i class="fa-solid fa-code"></i></div></div>
-                        <div class="orbit-item p3-2"><div class="item-inner"><i class="fa-brands fa-java"></i></div></div>
-                        <div class="orbit-item p3-3"><div class="item-inner"><i class="fa-brands fa-git-alt"></i></div></div>
-                        <div class="orbit-item p3-4"><div class="item-inner"><i class="fa-brands fa-bootstrap"></i></div></div>
+                        <div class="orbit-item p3-1">
+                            <div class="item-inner"><i class="fa-solid fa-code"></i></div>
+                        </div>
+                        <div class="orbit-item p3-2">
+                            <div class="item-inner"><i class="fa-brands fa-java"></i></div>
+                        </div>
+                        <div class="orbit-item p3-3">
+                            <div class="item-inner"><i class="fa-brands fa-git-alt"></i></div>
+                        </div>
+                        <div class="orbit-item p3-4">
+                            <div class="item-inner"><i class="fa-brands fa-bootstrap"></i></div>
+                        </div>
                     </div>
                 </div>
                 <div class="about-content-text">
@@ -142,16 +169,6 @@
             <h2 class="section-title">Professional Skills</h2>
             <div class="bento-grid">
                 <div class="bento-card bento-40 glass stagger-item">
-                    <div class="card-icon"><i class="fa-brands fa-html5"></i></div>
-                    <h3>Web Development</h3>
-                    <div class="tags">
-                        <span class="tag"><i class="fa-brands fa-html5"></i> HTML5</span>
-                        <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-                        <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-                    </div>
-                </div>
-
-                <div class="bento-card bento-30 glass">
                     <div class="card-icon"><i class="fa-solid fa-code"></i></div>
                     <h3>Programming Languages</h3>
                     <div class="tags">
@@ -162,18 +179,17 @@
                     </div>
                 </div>
 
-                <div class="bento-card bento-30 glass">
-                    <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
-                    <h3>Libraries</h3>
+                <div class="bento-card bento-40 glass stagger-item">
+                    <div class="card-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>Web Development</h3>
                     <div class="tags">
-                        <span class="tag"><i class="fa-solid fa-brain"></i> Scikit-Learn</span>
-                        <span class="tag"><i class="fa-solid fa-table"></i> Pandas</span>
-                        <span class="tag"><i class="fa-solid fa-calculator"></i> NumPy</span>
-                        <span class="tag"><i class="fa-solid fa-fire"></i> TensorFlow</span>
+                        <span class="tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                        <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                        <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
                     </div>
                 </div>
 
-                <div class="bento-card bento-30 glass">
+                <div class="bento-card bento-30 glass stagger-item">
                     <div class="card-icon"><i class="fa-solid fa-toolbox"></i></div>
                     <h3>Developer Tools</h3>
                     <div class="tags">
@@ -185,7 +201,19 @@
                         <span class="tag"><i class="fa-solid fa-laptop-code"></i> VS Code</span>
                     </div>
                 </div>
-                <div class="bento-card bento-30 glass">
+
+                <div class="bento-card bento-30 glass stagger-item">
+                    <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>Libraries</h3>
+                    <div class="tags">
+                        <span class="tag"><i class="fa-solid fa-brain"></i> Scikit-Learn</span>
+                        <span class="tag"><i class="fa-solid fa-table"></i> Pandas</span>
+                        <span class="tag"><i class="fa-solid fa-calculator"></i> NumPy</span>
+                        <span class="tag"><i class="fa-solid fa-fire"></i> TensorFlow</span>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-30 glass stagger-item">
                     <div class="card-icon"><i class="fa-solid fa-users"></i></div>
                     <h3>Soft Skills</h3>
                     <div class="tags">
@@ -208,14 +236,18 @@
                     </div>
                     <div class="project-info">
                         <h3>BiLSTM-Based Text Normalization for ASR Transcripts</h3>
-                        <p>Developed a deep learning model using Bidirectional LSTM to convert spoken-form ASR transcripts into standardized written text. It handles complex entities like dates, currencies, and abbreviations, significantly improving readability and downstream NLP tasks.</p>
+                        <p>Developed a deep learning model using Bidirectional LSTM to convert spoken-form ASR
+                            transcripts into standardized written text. It handles complex entities like dates,
+                            currencies, and abbreviations, significantly improving readability and downstream NLP tasks.
+                        </p>
                         <div class="project-tech">
                             <i class="fa-brands fa-python" title="Python"></i>
                             <i class="fa-solid fa-brain" title="Deep Learning"></i>
                             <i class="fa-solid fa-terminal" title="TensorFlow"></i>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/saikumarch1/BiLSTM-Based-Text-Normalization-for-ASR-Transcripts" target="_blank" class="btn-link">GitHub
+                            <a href="https://github.com/saikumarch1/BiLSTM-Based-Text-Normalization-for-ASR-Transcripts"
+                                target="_blank" class="btn-link">GitHub
                                 <i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
@@ -228,14 +260,17 @@
                     </div>
                     <div class="project-info">
                         <h3>EV Battery Optimization</h3>
-                        <p>Implemented optimization algorithms to enhance the efficiency and lifespan of Electric Vehicle batteries. Focused on state-of-charge estimation and thermal management using data-driven approaches to optimize power delivery and longevity.</p>
+                        <p>Implemented optimization algorithms to enhance the efficiency and lifespan of Electric
+                            Vehicle batteries. Focused on state-of-charge estimation and thermal management using
+                            data-driven approaches to optimize power delivery and longevity.</p>
                         <div class="project-tech">
                             <i class="fa-brands fa-python" title="Python"></i>
                             <i class="fa-solid fa-chart-line" title="Data Analysis"></i>
                             <i class="fa-solid fa-bolt" title="Optimization"></i>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Maheshbabu777/EV-battery-optimisation" target="_blank" class="btn-link">GitHub
+                            <a href="https://github.com/Maheshbabu777/EV-battery-optimisation" target="_blank"
+                                class="btn-link">GitHub
                                 <i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
@@ -248,14 +283,17 @@
                     </div>
                     <div class="project-info">
                         <h3>Secured Inter-Process Communication</h3>
-                        <p>Designed and implemented a secure IPC mechanism to ensure data integrity and confidentiality between processes. Utilized encryption and authentication protocols to prevent unauthorized access and data tampering in high-security environments.</p>
+                        <p>Designed and implemented a secure IPC mechanism to ensure data integrity and confidentiality
+                            between processes. Utilized encryption and authentication protocols to prevent unauthorized
+                            access and data tampering in high-security environments.</p>
                         <div class="project-tech">
                             <i class="fa-solid fa-code" title="C++"></i>
                             <i class="fa-solid fa-lock" title="Cryptography"></i>
                             <i class="fa-solid fa-gears" title="System Programming"></i>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/Maheshbabu777/Secure-Inter-process-Communication" target="_blank" class="btn-link">GitHub
+                            <a href="https://github.com/Maheshbabu777/Secure-Inter-process-Communication"
+                                target="_blank" class="btn-link">GitHub
                                 <i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
@@ -270,16 +308,22 @@
                 <div class="training-header">
                     <div class="training-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="training-title-wrap">
-                        <h3>Center for Professional Enhancement - AI & ML for Real-world Problem Solving</h3>
+                        <h3>LPU skill developement - AI & ML for Real-world Problem Solving</h3>
                         <span class="modern-badge">June 2025 – July 2025</span>
                     </div>
                 </div>
                 <div class="training-body">
-                    <ul>
-                        <li>Mastered the application of Artificial Intelligence and Machine Learning to complex, industry-specific challenges through a professional enhancement program.</li>
-                        <li>Developed expertise in end-to-end ML workflows, from advanced data preprocessing to evaluating model performance using supervised learning techniques.</li>
-                        <li>Acquired practical proficiency in designing and deploying scalable machine-learning solutions for multi-domain problem-solving.</li>
-                    </ul>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                        Acquired practical expertise in end-to-end Machine Learning workflows, from data preprocessing
+                        to deploying scalable AI solutions for real-world problems.
+                    </p>
+                    <div class="cert-card glass" onclick="openModal('trainingModal1')">
+                        <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="cert-info">
+                            <h3>AI & ML for Real-world Problem Solving</h3>
+                            <p class="cert-issuer">LPU skill developement</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -335,7 +379,9 @@
                     </div>
                     <div class="achievement-info">
                         <h3>Coding Achievements</h3>
-                        <p>Successfully solved over 100 algorithmic challenges collectively on <strong>LeetCode</strong> and <strong>GeeksforGeeks</strong>, demonstrating strong problem-solving and logical reasoning skills.</p>
+                        <p>Successfully solved over 100 algorithmic challenges collectively on <strong>LeetCode</strong>
+                            and <strong>GeeksforGeeks</strong>, demonstrating strong problem-solving and logical
+                            reasoning skills.</p>
                         <span class="achievement-date">January 2026 – Present</span>
                     </div>
                 </div>
@@ -353,8 +399,9 @@
                         <h3>Bachelor of Technology in Computer Science and Engineering</h3>
                         <h4 class="timeline-institution-modern">Lovely Professional University</h4>
                         <span class="modern-badge">August 2023 – Present</span>
-                        <p>Currently in my 2nd year. Relevant coursework includes Data Structures, Algorithms, Web
-                            Development, and Database Management Systems. Maintaining a <strong>CGPA of 7.25</strong>.</p>
+                        <p>Currently in my 3rd year. Relevant coursework includes Data Structures, Algorithms, Web
+                            Development, and Database Management Systems. Maintaining a <strong>CGPA of 7.25</strong>.
+                        </p>
                     </div>
                 </div>
                 <!-- Intermediate -->
@@ -382,6 +429,57 @@
             </div>
         </section>
 
+        <!-- Resume Section -->
+        <section id="resume" class="resume section reveal-on-scroll">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-container">
+                <!-- Left Profile Card -->
+                <div class="profile-card glass stagger-item">
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="profile-name">Cheruku Sai Kumar</h3>
+                    <p class="profile-title">MACHINE LEARNING ENGINEER</p>
+                    <div class="profile-socials">
+                        <a href="https://www.linkedin.com/in/cheruku-sai-kumar" target="_blank"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/saikumarch1" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:saisahas2005@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Right Overview Section -->
+                <div class="resume-overview glass stagger-item">
+                    <h3 class="overview-title">Professional Overview</h3>
+                    <p class="overview-text">Combining Computer Science foundations with modern full-stack engineering
+                        and AI exploration to build scalable solutions.</p>
+
+                    <div class="overview-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-code-branch"></i></div>
+                            <h4>3+</h4>
+                            <p>Key Projects</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <h4>12+</h4>
+                            <p>Technologies</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+                            <h4>5+</h4>
+                            <p>Certifications</p>
+                        </div>
+                    </div>
+
+                    <a href="https://drive.google.com/file/d/1PJmNJC27ZSQHl4NPSX3_DwToCNXvz86Z/view?usp=sharing"
+                        target="_blank" class="btn-preview-resume">
+                        <i class="fa-solid fa-eye"></i> Preview Full Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <div id="certModal1" class="modal">
             <div class="modal-content glass">
                 <span class="close-modal" onclick="closeModal('certModal1')">&times;</span>
@@ -399,8 +497,8 @@
                     </ul>
                 </div>
                 <div class="modal-footer">
-                    <a href="https://drive.google.com/file/d/15HbccHSAQGDM7P_gIdcEfTYXvCUWs_Pf/view?usp=drive_link" target="_blank"
-                        class="btn btn-primary btn-full">View Certificate <i
+                    <a href="https://drive.google.com/file/d/15HbccHSAQGDM7P_gIdcEfTYXvCUWs_Pf/view?usp=drive_link"
+                        target="_blank" class="btn btn-primary btn-full">View Certificate <i
                             class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
@@ -496,6 +594,29 @@
                 </div>
                 <div class="modal-footer">
                     <a href="https://drive.google.com/file/d/1V6CcV1FgY7NDHGdQPCqmXEquHNXq_rMB/view?usp=drive_link"
+                        target="_blank" class="btn btn-primary btn-full">View Certificate <i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div id="trainingModal1" class="modal">
+            <div class="modal-content glass">
+                <span class="close-modal" onclick="closeModal('trainingModal1')">&times;</span>
+                <div class="modal-header">
+                    <div class="cert-icon large-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h3>AI & ML for Real-world Problem Solving</h3>
+                </div>
+                <div class="modal-body">
+                    <h4>Key Topics Covered</h4>
+                    <ul>
+                        <li>Supervised & Unsupervised Learning</li>
+                        <li>Data Preprocessing Pipeline</li>
+                        <li>Model Evaluation Metrics</li>
+                        <li>Predictive Analytics Models</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://drive.google.com/file/d/1xuu7NUtZRTVo-l08pYFvg9F6p8XTOJYf/view?usp=sharing"
                         target="_blank" class="btn btn-primary btn-full">View Certificate <i
                             class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
